@@ -36,4 +36,4 @@ app.get('/about', function(req, res) {
 });
 
 app.listen(80);
-console.log('Server is running at http://localhost:8080');
+console.log('Server is running at http://localhost');
