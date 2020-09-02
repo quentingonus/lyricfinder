@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body class="container">
+
+    <header>
+        <% include ../partials/header %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <div class="text-center mb-4">
+                <input type="text" class="artist_to_find" placeholder="Enter Artist Name" value="<%= artist_to_find %>">
+                <input type="text" class="song_to_find" placeholder="Enter Song Name" value="<%= song_to_find %>">
+                <button class="btn btn-primary" onclick="findlyric()">Find</button>
+            </div>
+            <div class="text-center"><pre><%= lyrics %></pre></div>
+        </div>
+    </main>
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+
+</body>
+<script>
+    var findlyric = () => {
+        var song_to_find = $(".song_to_find").val();
+        var artist_to_find = $(".artist_to_find").val();
+
+        location.href = "/?" + 'song_to_find=' + encodeURIComponent(song_to_find) + '&artist_to_find=' + encodeURIComponent(artist_to_find);
+    }
+</script>
+
+</html>
